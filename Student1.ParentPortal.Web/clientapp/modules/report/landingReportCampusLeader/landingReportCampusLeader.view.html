@@ -1,0 +1,169 @@
+﻿<main role="main" class="container" ng-if="ctrl.role == 'CampusLeader'">
+    <h1>{{'view.reportlogin.title'  | translate}}, <span>{{'view.reportlogin.subTitleAdmin' | translate}}</span></h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" onclick="return false;" role="tab" aria-controls="nav-login" aria-selected="true">{{'Logins' | translate}}</a>
+                            <a class="nav-item nav-link" id="nav-message-tab" data-toggle="tab" href="#nav-message" onclick="return false;" role="tab" aria-controls="nav-message" aria-selected="false">{{'Messages' | translate}}</a>
+                        </div>
+                    </nav>
+
+                    <div class="tab-content" id="nav-tabContent">
+                        <!--Login tab-->
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <!--Child tabs start-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-12">
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-item nav-link active" id="nav-staff-tab" data-toggle="tab" href="#nav-staff" onclick="return false;" role="tab" aria-controls="nav-staff" aria-selected="true">{{'Staff' | translate}}</a>
+                                                    <a class="nav-item nav-link" id="nav-parent-tab" data-toggle="tab" href="#nav-parent" onclick="return false;" role="tab" aria-controls="nav-parent" aria-selected="false">{{'Family Members' | translate}}</a>
+                                                </div>
+                                            </nav>
+
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <!--Staff tab-->
+                                                <div class="tab-pane fade show active" id="nav-staff" role="tabpanel" aria-labelledby="nav-staff-tab">
+                                                    <report-staff-campus-leader model="ctrl.modelStaff" tooltips="ctrl.tooltips"></report-staff-campus-leader>
+                                                </div>
+                                                <!--Staff tab end-->
+                                                <!--Parent tab-->
+                                                <div class="tab-pane fade" id="nav-parent" role="tabpanel" aria-labelledby="nav-parent-tab">
+                                                    <report-parent-campus-leader model="ctrl.modelParent" tooltips="ctrl.tooltips"></report-parent-campus-leader>
+                                                </div>
+                                                <!--Parent tab end-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Child tabs end-->
+
+
+
+                        </div>
+                        <!--Login tab end-->
+                        <!--Message tab-->
+                        <div class="tab-pane fade" id="nav-message" role="tabpanel" aria-labelledby="nav-message-tab">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab-m" role="tablist">
+                                                <a class="nav-item nav-link active" id="nav-staff-tab-m" data-toggle="tab" href="#nav-staff-m" onclick="return false;" role="tab" aria-controls="nav-staff-m" aria-selected="true">{{'Staff' | translate}}</a>
+                                                <a class="nav-item nav-link" id="nav-parent-tab-m" data-toggle="tab" href="#nav-parent-m" onclick="return false;" role="tab" aria-controls="nav-parent-m" aria-selected="false">{{'Family Members' | translate}}</a>
+                                            </div>
+                                        </nav>
+
+                                        <div class="tab-content" id="nav-tabContent-m">
+                                            <!--Staff tab-->
+                                            <div class="tab-pane fade show active" id="nav-staff-m" role="tabpanel" aria-labelledby="nav-staff-tab-m">
+                                                <report-messages-staff-campus-leader model="ctrl.campusLeaderReportStaffMessages" tooltips="ctrl.tooltips"></report-messages-staff-campus-leader>
+                                            </div>
+                                            <!--Staff tab end-->
+                                            <!--Parent tab-->
+                                            <div class="tab-pane fade" id="nav-parent-m" role="tabpanel" aria-labelledby="nav-parent-tab-m">
+                                                <report-messages-staff-campus-leader model="ctrl.campusLeaderReportParentMessages" tooltips="ctrl.tooltips"></report-messages-staff-campus-leader>
+                                            </div>
+                                            <!--Parent tab end-->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Message tab end-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--<main role="main" class="container" ng-if="ctrl.role == 'CampusLeader' ">
+    <h1>{{'view.reportlogin.title'  | translate}}, <span>{{'view.reportlogin.subTitleAdmin' | translate}}</span></h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="ng-binding">Logins </h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th class="ng-binding">Campus</th>
+                            <th class="ng-binding">Eligible Staff</th>
+                            <th class="ng-binding">Eligible Staff Login</th>
+                            <th class="ng-binding">Teachers</th>
+                            <th class="ng-binding">Teachers Login</th>
+                            <th class="ng-binding">Campus Leaders</th>
+                            <th class="ng-binding">Campus Leaders Login</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in ctrl.model.campusLogReports">
+                            <td>{{s.campus}}</td>
+                            <td>{{s.eligibleStaff}}</td>
+                            <td>{{s.eligibleStaffLogin}}</td>
+                            <td>{{s.teacher}}</td>
+                            <td>{{s.teacherLogin}}</td>
+                            <td>{{s.campusLeader}}</td>
+                            <td>{{s.campusLeaderLogin}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end pr-3">
+        <div class="card">
+            <button class="btn btn-primary" ng-click="ctrl.exportCSV()">Export Campus List CSV</button>
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="ng-binding">Staff </h3>
+            <div class="table-responsive">
+                <table ng-table="tableParams" class="table" show-filter="false" export-csv="csv">
+                    <tr ng-repeat="s in ctrl.model">
+                        <td title="'Campus'" filter="{ campus: 'text'}" sortable="'campus'">
+                            {{s.campus}}
+                        </td>
+                        <td title="'Eligible Staff'" filter="{ eligibleStaff: 'number'}" sortable="'eligibleStaff'">
+                            {{s.eligibleStaff}}
+                        </td>
+                        <td title="'Eligible Staff Login'" filter="{ eligibleStaffLogin: number'}" sortable="'eligibleStaffLogin'">
+                            {{s.eligibleStaffLogin}}
+                        </td>
+                        <td title="'Teachers'" filter="{ teacher: 'number'}" sortable="'teacher'">
+                            {{s.teacher}}
+                        </td>
+                        <td title="'Teachers Login'" filter="{ teacherLogin: 'number'}" sortable="'teacherLogin'">
+                            {{s.teacherLogin}}
+                        </td>
+                        <td title="'Campus Leaders'" filter="{ campusLeader: 'number'}" sortable="'campusLeader'">
+                            {{s.campusLeader}}
+                        </td>
+                        <td title="'Campus Leaders Login'" filter="{ campusLeaderLogin: 'number'}" sortable="'campusLeaderLogin'">
+                            {{s.campusLeaderLogin}}
+                        </td>
+                        <td title="'Export details'">
+                            <a href="#" ng-click="ctrl.exportStaffCSV(s.campus)">Staff list</a>
+                        </td>
+                    </tr>
+                </table>                
+            </div>
+        </div>
+    </div>
+
+
+
+</main>-->
+

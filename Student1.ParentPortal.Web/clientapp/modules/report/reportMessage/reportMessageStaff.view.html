@@ -1,0 +1,62 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="ng-binding">District</th>
+                        <th class="ng-binding">Messages Sent <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.messagesSent}}"></i></th>
+                        <th class="ng-binding">Messages Received <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.messagesReceived}}"></i></th>
+                        <th class="ng-binding">Unread Messages <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.unreadMessages}}"></i></th>
+                        <th class="ng-binding">Export Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ng-binding">YES Prep</td>
+                        <td>{{ctrl.messagesSent}}</td>
+                        <td>{{ctrl.messagesReceived}}</td>
+                        <td>{{ctrl.unreadMessages}}</td>
+                        <td title="'Export details'">
+                            <a href="#" ng-click="ctrl.exportAllStaffCSV($event)">Staff list</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-end pr-3">
+    <div class="card">
+        <button class="btn btn-primary" ng-click="ctrl.exportCSV()">Export Campus List CSV</button>
+    </div>
+
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="cursor-pointer">
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("campus")' ng-class='ctrl.sortClass("campus")'>Campus</th>
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("messagesSent")' ng-class='ctrl.sortClass("messagesSent")'>Messages Sent</th>
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("messagesReceived")' ng-class='ctrl.sortClass("messagesReceived")'>Messages Received</th>
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("unreadMessages")' ng-class='ctrl.sortClass("unreadMessages")'>Unread Messages</th>
+                        <th class="ng-binding">Export details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="s in ctrl.model|orderBy:ctrl.column:ctrl.reverse">
+                        <td class="ng-binding">{{s.campus}}</td>
+                        <td>{{s.messagesSent}}</td>
+                        <td>{{s.messagesReceived}}</td>
+                        <td>{{s.unreadMessages}}</td>
+                        <td title="'Export details'">
+                            <a href="#" ng-click="ctrl.exportStaffCSV($event,s.campus, s.educationOrganizationId)">Staff list</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,539 @@
+﻿{
+  "IMPORTANT_READ": {
+    "info": "This file holds customizable parameters, values, rules and textual descriptions that can be changed through the application.",
+    "NOTE": "Do not save critical/sensible information in here. (i.e. Credentials, connection strings, etc..)"
+  },
+  "attendance": {
+    "ADA": {
+      "maxAbsencesCountThreshold": 10,
+      "excused": {
+        "maxAbsencesCountThreshold": 10,
+        "thresholdRules": [
+          {
+            "interpretation": "great",
+            "operator": "==",
+            "value": 0
+          },
+          {
+            "interpretation": "good",
+            "operator": "<",
+            "value": 2
+          },
+          {
+            "interpretation": "warning",
+            "operator": "<=",
+            "value": 4
+          },
+          {
+            "interpretation": "bad",
+            "operator": ">=",
+            "value": 5
+          }
+        ]
+      },
+      "unexcused": {
+        "maxAbsencesCountThreshold": 10,
+        "thresholdRules": [
+          {
+            "interpretation": "great",
+            "operator": "==",
+            "value": 0
+          },
+          {
+            "interpretation": "good",
+            "operator": "<",
+            "value": 2
+          },
+          {
+            "interpretation": "warning",
+            "operator": "<=",
+            "value": 4
+          },
+          {
+            "interpretation": "bad",
+            "operator": ">=",
+            "value": 5
+          }
+        ]
+      },
+      "tardy": {
+        "maxAbsencesCountThreshold": 10,
+        "thresholdRules": [
+          {
+            "interpretation": "great",
+            "operator": "==",
+            "value": 0
+          },
+          {
+            "interpretation": "good",
+            "operator": "<",
+            "value": 2
+          },
+          {
+            "interpretation": "warning",
+            "operator": "<=",
+            "value": 4
+          },
+          {
+            "interpretation": "bad",
+            "operator": ">=",
+            "value": 5
+          }
+        ]
+      }
+    },
+    "periodLevelAttendance": {
+      "maxAbsencesCountThreshold": 10,
+      "excused": {
+        "maxAbsencesCountThreshold": 10,
+        "thresholdRules": [
+          {
+            "interpretation": "great",
+            "operator": "==",
+            "value": 0
+          },
+          {
+            "interpretation": "good",
+            "operator": "<",
+            "value": 2
+          },
+          {
+            "interpretation": "warning",
+            "operator": "<=",
+            "value": 4
+          },
+          {
+            "interpretation": "bad",
+            "operator": ">=",
+            "value": 5
+          }
+        ]
+      },
+      "unexcused": {
+        "maxAbsencesCountThreshold": 10,
+        "thresholdRules": [
+          {
+            "interpretation": "great",
+            "operator": "==",
+            "value": 0
+          },
+          {
+            "interpretation": "good",
+            "operator": "<",
+            "value": 2
+          },
+          {
+            "interpretation": "warning",
+            "operator": "<=",
+            "value": 4
+          },
+          {
+            "interpretation": "bad",
+            "operator": ">=",
+            "value": 5
+          }
+        ]
+      },
+      "tardy": {
+        "maxAbsencesCountThreshold": 10,
+        "thresholdRules": [
+          {
+            "interpretation": "great",
+            "operator": "==",
+            "value": 0
+          },
+          {
+            "interpretation": "good",
+            "operator": "<",
+            "value": 2
+          },
+          {
+            "interpretation": "warning",
+            "operator": "<=",
+            "value": 4
+          },
+          {
+            "interpretation": "bad",
+            "operator": ">=",
+            "value": 5
+          }
+        ]
+      }
+    }
+  },
+  "behavior": {
+    "maxDisciplineIncidentsCountThreshold": 3,
+    "linkToSystemWithDetails": {
+      "title": "Hero K12",
+      "linkText": "Hero",
+      "url": "https://access.heropowered.com/sso/parent/login"
+    },
+    "thresholdRules": [
+      {
+        "interpretation": "great",
+        "operator": "<=",
+        "value": 0
+      },
+      {
+        "interpretation": "good",
+        "operator": "<=",
+        "value": 1
+      },
+      {
+        "interpretation": "warning",
+        "operator": "<=",
+        "value": 2
+      },
+      {
+        "interpretation": "bad",
+        "operator": ">=",
+        "value": 1
+      }
+    ]
+  },
+  "courseGrades": {
+    "linkToSystemWithDetails": {
+      "title": "HAC - Detail",
+      "linkText": "Skyward",
+      "url": "https://skyward.iscorp.com/YESPrepTXStuSTS/Session/Signin"
+    },
+    "gpa": {
+      "nationalAverage": 3.38,
+      "thresholdRules": [
+        {
+          "interpretation": "good",
+          "operator": ">=",
+          "value": 3.0
+        },
+        {
+          "interpretation": "warning",
+          "operator": "<",
+          "value": 3.0
+        },
+        {
+          "interpretation": "bad",
+          "operator": "<=",
+          "value": 1.9
+        }
+      ]
+    },
+    "courseAverage": {
+      "thresholdRules": [
+        {
+          "interpretation": "great",
+          "operator": ">=",
+          "value": 90
+        },
+        {
+          "interpretation": "good",
+          "operator": ">=",
+          "value": 73
+        },
+        {
+          "interpretation": "warning",
+          "operator": ">=",
+          "value": 70
+        },
+        {
+          "interpretation": "bad",
+          "operator": "<",
+          "value": 70
+        }
+      ]
+    }
+  },
+  "assignments": {
+    "maxAssigmentsCountThreshold": 3,
+    "linkToSystemWithDetails": {
+      "title": "HAC - Detail",
+      "linkText": "Skyward",
+      "url": "https://skyward.iscorp.com/YESPrepTXStuSTS/Session/Signin"
+    },
+    "thresholdRules": [
+      {
+        "interpretation": "great",
+        "operator": "==",
+        "value": 0
+      },
+      {
+        "interpretation": "good",
+        "operator": "<=",
+        "value": 2
+      },
+      {
+        "interpretation": "warning",
+        "operator": "<=",
+        "value": 10
+      },
+      {
+        "interpretation": "bad",
+        "operator": ">=",
+        "value": 10
+      }
+    ]
+  },
+  "graduationReadiness": {
+    "thresholdRules": [
+      {
+        "interpretation": "good",
+        "operator": "==",
+        "value": true
+      },
+      {
+        "interpretation": "bad",
+        "operator": "==",
+        "value": false
+      }
+    ]
+  },
+  "studentProfileExternalLinks": [
+    {
+      "title": "Spotlight report X",
+      "linkText": "NWEA Video",
+      "url": "https://www.spotlight-education.com/"
+    }
+  ],
+  "descriptors": {
+    "excusedAbsenceDescriptorCodeValue": "Excused Absence", // "AE",
+    "unexcusedAbsenceDescriptorCodeValue": "A", // "AU",
+    "tardyDescriptorCodeValue": "Tardy", // "T",
+    "absentDescriptorCodeValue": "Absent", // "A",
+    "gradeBookMissingAssignmentTypeDescriptors": [ "Missing" ], //["Assignment","Homework"], [895,897]
+    "gradeTypeGradingPeriodDescriptor": "Grading Period", // 928
+    "gradeTypeSemesterDescriptor": "Semester", // 926
+    "gradeTypeExamDescriptor": "Exam",
+    "gradeTypeFinalDescriptor": "Final", // 925
+    "validParentDescriptors": [ "Father", "Mother", "Step", "Guardian", "Foster", "GrandParent", "Father, step", "Mother, step", "Parent, step", "F", "FP", "G", "M", "SP", "GP" ], //["F", "FP", "G", "M", "SP", "GP",  ]
+    "validCampusLeaderDescriptors": [ "Principal", "Assistant Principal", "Counselor", "School Administrator", "School Leader", "LEA Administrator", "LEA System administrator" ],
+    "validStaffDescriptors": [ "Teacher" ],
+    "schoolGradingPeriodDescriptors": [ "A1", "A2", "A3", "A4", "A5", "A6" ],
+    //[
+    //  "First Nine Weeks",
+    //  "Second Nine Weeks",
+    //  "Third Nine Weeks",
+    //  "Fourth Nine Weeks"
+    //],
+    //,
+    // They have to be in order [ "A1", "A2", "A3", "A4", "A5", "A6" ]
+    "examGradingPeriods":[ "First Semester", "Second Semester" ], //[ "A3", "A6" ],
+    "disciplineIncidentDescriptor": "Perpetrator",
+    "missingAssignmentLetterGrade": "Missing",
+    "validEmailTypeDescriptors": [ "Home/Personal" ]
+  },
+  "assessments": [
+    {
+      "title": "STAAR - EOC", // EoC  -- STAAR Algebra II, STAAR English III
+      "assessmentIdentifiers": [ "STAAR-EOC-ENG1", "STAAR-EOC-ALG1", "STAAR-EOC-ENG2", "STAAR-EOC-BIO", "STAAR-EOC-USHIS" ],
+      "assesmentidentifierdisplaytitles": [
+        {
+          "assesmentidentifier": "STAAR-EOC-ENG1",
+          "Display": "STAAR English I"
+        },
+        {
+          "assesmentidentifier": "STAAR-EOC-ALG1",
+          "Display": "STAAR Algebra I"
+        },
+        {
+          "assesmentidentifier": "STAAR-EOC-ENG2",
+          "Display": "STAAR English II"
+        },
+        {
+          "assesmentidentifier": "STAAR-EOC-BIO",
+          "Display": "STAAR Biology I"
+        },
+        {
+          "assesmentidentifier": "STAAR-EOC-USHIS",
+          "Display": "STAAR U.S. History I"
+        }
+      ],
+
+      "assessmentReportingMethodTypeDescriptor": "Scale score",
+      "shortDescription": "State of Texas Assessments of Academic Readiness",
+      "externalLinkLegend": "TexasAssessment.com",
+      "externalLink": "https://texasassessment.com/staar/families/"
+    },
+    {
+      "title": "PSAT",
+      "assessmentIdentifiers": [ "National-PSAT_NMSQT"],
+      "objectiveAssesmentIdentificationCode": [ "National-PSAT_NMSQT-SectionScores-Math", "National-PSAT_NMSQT-SectionScores-EBRW" ],
+      "assesmentidentifierdisplaytitles": [
+        {
+          "assesmentidentifier": "National-PSAT_NMSQT-SectionScores-EBRW",
+          "Display": "PSAT EBRW"
+        },
+        {
+          "assesmentidentifier": "National-PSAT_NMSQT-SectionScores-Math",
+          "Display": "PSAT MATH"
+        }
+
+      ],
+
+      "assessmentReportingMethodTypeDescriptor": "Scale score",
+      "shortDescription": "Preliminary Scholastic Aptitude Test",
+      "externalLink": "https://collegereadiness.collegeboard.org/about/scores/benchmarks"
+    },
+    {
+      "title": "National(CollegeBoard) SAT",
+      "assessmentIdentifiers": [ "National-SAT" ],
+      "assessmentReportingMethodTypeDescriptor": "Section score",
+      "objectiveAssesmentIdentificationCode": [ "National-SAT-SectionScores-EBRW", "National-SAT-SectionScores-Math" ],
+      "assesmentidentifierdisplaytitles": [
+        {
+          "assesmentidentifier": "National-SAT-SectionScores-EBRW",
+          "Display": "SAT EBRW"
+        },
+        {
+          "assesmentidentifier": "National-SAT-SectionScores-Math",
+          "Display": "SAT MATH"
+        }
+       
+      ],
+
+      "shortDescription": "College entrance exam",
+      "externalLink": "https://collegereadiness.collegeboard.org/about/scores/benchmarks"
+    }
+  ],
+  "staarAssessmentHistory": {
+    "title": "STAAR - EOC", // Elementary and Middle School,
+    "assessmentIdentifiers": [ "STAAR-EOC-ENG1", "STAAR-EOC-ALG1", "STAAR-EOC-ENG2", "STAAR-EOC-BIO", "STAAR-EOC-USHIS" ], //[ "STAAR-3-8-V1" ],//
+    "assessmentReportingMethodTypeDescriptor": "Scale score",
+    "assesmentidentifierdisplaytitles": [
+      {
+        "assesmentidentifier": "STAAR-EOC-ENG1",
+        "Display": "STAAR English I"
+      },
+      {
+        "assesmentidentifier": "STAAR-EOC-ALG1",
+        "Display": "STAAR Algebra I"
+      },
+      {
+        "assesmentidentifier": "STAAR-EOC-ENG2",
+        "Display": "STAAR English II"
+      },
+      {
+        "assesmentidentifier": "STAAR-EOC-BIO",
+        "Display": "STAAR Biology I"
+      },
+
+      {
+        "assesmentidentifier": "STAAR-EOC-USHIS",
+        "Display": "STAAR U.S. History I"
+      }
+    ],
+    "shortDescription": "State of Texas Assessments of Academic Readiness",
+    "externalLink": "https://txparentportal.emetric.net/login"
+  },
+  "feedbackExternalUrl": "https://www.yesprep.org/parents/family-dashboards/portal-help",
+  "mostCommonLanguageCodes": [ "en", "es", "vi" ],
+  "staarExternalLink": "https://txparentportal.emetric.net/login",
+  "psatSATExternalLink": "https://collegereadiness.collegeboard.org/about/scores/benchmarks",
+  "featureToggle": [
+    {
+      "page": "ParentLanding",
+      "route": "landing",
+      "features": [
+        {
+          "name": "comms",
+          "enabled": "true",
+          "studentAbc": {
+            "missingAssignments": "true",
+            "courseAverage": "true",
+            "behavior": "false",
+            "absence": "true"
+          }
+        }
+      ]
+    },
+    {
+      "page": "TeacherLanding",
+      "route": "teacherLanding",
+      "features": [
+        {
+          "name": "comms",
+          "enabled": "true",
+          "studentAbc": {
+            "missingAssignments": "true",
+            "courseAverage": "true",
+            "behavior": "true",
+            "absence": "true"
+          }
+        }
+      ]
+    },
+    {
+      "page": "AdminLanding",
+      "route": "adminLanding",
+      "features": [
+        {
+          "name": "comms",
+          "enabled": "true"
+        }
+      ]
+    },
+    {
+      "page": "StudentDetail",
+      "route": "studentdetail",
+      "features": [
+        {
+          "name": "comms",
+          "enabled": "true",
+          "studentAbc": {
+            "missingAssignments": "true",
+            "courseAverage": "true",
+            "behavior": "false",
+            "absence": "true",
+          }
+        },
+        {
+          "name": "collegeInitiativeCorner",
+          "enabled": "true"
+        },
+        {
+          "name": "GPA",
+          "enabled": "true"
+        },
+        {
+          "name": "OnTrack",
+          "enabled": "true"
+        },
+        {
+          "name": "STAAR",
+          "enabled": "false"
+        },
+        {
+          "name": "PSAT",
+          "enabled": "true"
+        },
+        {
+          "name": "SAT",
+          "enabled": "true"
+        },
+      ]
+    },
+    {
+      "page": "UserProfile",
+      "route": "userProfile",
+      "features": [
+        {
+          "name": "comms",
+          "enabled": "true"
+        }
+      ]
+    },
+    {
+      "page": "CampusLeaderLanding",
+      "route": "campusLeaderLanding",
+      "features": [
+        {
+          "name": "comms",
+          "enabled": "false"
+        }
+      ]
+    }
+
+  ],
+  "sessionPadding": {
+    "daysBeforeSessionStart": 5,
+    "daysAfterSessionEnd": 5
+  }
+}

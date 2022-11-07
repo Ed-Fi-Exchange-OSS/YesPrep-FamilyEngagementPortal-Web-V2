@@ -1,0 +1,62 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="ng-binding">Campus</th>
+                        <th class="ng-binding">Eligible Family Members</th>
+                        <th class="ng-binding">Eligible Family Members Logins</th>
+                        <th class="ng-binding">Profiles Completed</th>
+                        <th class="ng-binding">Non English Languages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="s in ctrl.model">
+                        <td><a href="#" ng-click="ctrl.changeCampus($event, $index)">{{s.campus.campus}}</a></td>
+                        <td>{{s.campus.eligibleParent}}</td>
+                        <td>{{s.campus.eligibleParentLogin}}</td>
+                        <td>{{s.campus.profilesCompleted}}</td>
+                        <td>{{s.campus.nonEnglishLanguages}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<div class="card col-md-8">
+    <div class="card-body">
+        <!--<div class="row" ng-if="ctrl.model.length > 1">
+            <div class="col-12 col-lg-12 float-md-right">
+                <div class="form-group">
+                    <label for="nickname"> {{'select school.' | translate}} </label>
+                    <select class="form-control" name="schoolselect" id="schoolselect"
+                            ng-model="ctrl.seletedschool"
+                            ng-options="item for item in ctrl.schools"
+                            ng-change="ctrl.OnSchoolChange()">
+                    </select>
+                </div>
+            </div>
+        </div>-->
+        <div class="table-responsive">
+            <h3 class="mb-3">{{ctrl.campusName}}</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="cursor-pointer">
+                        <th class="ng-binding" ng-class='ctrl.sortClass("profileLanguage")'  ng-click='ctrl.sortColumn("profileLanguage")'>Profile Language</th>
+                        <th class="ng-binding" ng-class='ctrl.sortClass("parentsLanguage")'  ng-click='ctrl.sortColumn("parentsLanguage")'>Family Members with the Language</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="s in ctrl.languages|orderBy:ctrl.column:ctrl.reverse">
+                        <td>{{s.profileLanguage}}</td>
+                        <td>{{s.parentsLanguage}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

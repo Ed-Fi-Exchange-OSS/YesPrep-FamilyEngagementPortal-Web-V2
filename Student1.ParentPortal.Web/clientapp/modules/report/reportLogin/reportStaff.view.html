@@ -1,0 +1,76 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="ng-binding">District</th>
+                        <th class="ng-binding">Eligible Staff <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.eligibleStaff}}"></i></th>
+                        <th class="ng-binding">Eligible Staff Login</th>
+                        <th class="ng-binding">Teachers <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.teachers}}"></i></th>
+                        <th class="ng-binding">Teachers Login</th>
+                        <th class="ng-binding">Campus Leaders <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.campusLeaders}}"></i></th>
+                        <th class="ng-binding">Campus Leaders Login</th>
+                        <th class="ng-binding">Export details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ng-binding">YES Prep</td>
+                        <td>{{ctrl.eligibleStaff}}</td>
+                        <td>{{ctrl.eligibleStaffLogin}}</td>
+                        <td>{{ctrl.teacher}}</td>
+                        <td>{{ctrl.teacherLogin}}</td>
+                        <td>{{ctrl.campusLeader}}</td>
+                        <td>{{ctrl.campusLeaderLogin}}</td>
+                        <td title="'Export details'">
+                            <a href="#" ng-click="ctrl.exportAllStaffCSV($event)">Staff list</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-end pr-3">
+    <div class="card">
+        <button class="btn btn-primary" ng-click="ctrl.exportCSV()">Export Campus List CSV</button>
+    </div>
+
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+        <thead>
+            <tr class="cursor-pointer">
+                <th class="ng-binding" ng-click='ctrl.sortColumn("campus")' ng-class='ctrl.sortClass("campus")'>Campus</th>
+                <th class="ng-binding" ng-click='ctrl.sortColumn("eligibleStaff")'  ng-class='ctrl.sortClass("eligibleStaff")'>Eligible Staff</th>
+                <th class="ng-binding" ng-click='ctrl.sortColumn("eligibleStaffLogin")'  ng-class='ctrl.sortClass("eligibleStaffLogin")'>Eligible Staff Login</th>
+                <th class="ng-binding" ng-click='ctrl.sortColumn("teacher")'  ng-class='ctrl.sortClass("teacher")'>Teachers</th>
+                <th class="ng-binding" ng-click='ctrl.sortColumn("teacherLogin")'  ng-class='ctrl.sortClass("teacherLogin")'>Teachers Login</th>
+                <th class="ng-binding" ng-click='ctrl.sortColumn("campusLeader")'  ng-class='ctrl.sortClass("campusLeader")'>Campus leaders</th>
+                <th class="ng-binding" ng-click='ctrl.sortColumn("campusLeaderLogin")'  ng-class='ctrl.sortClass("campusLeaderLogin")'>Campus login</th>
+                <th class="ng-binding">Export details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="s in ctrl.model|orderBy:ctrl.column:ctrl.reverse">
+                <td class="ng-binding">{{s.campus}}</td>
+                <td>{{s.eligibleStaff}}</td>
+                <td>{{s.eligibleStaffLogin}}</td>
+                <td>{{s.teacher}}</td>
+                <td>{{s.teacherLogin}}</td>
+                <td>{{s.campusLeader}}</td>
+                <td>{{s.campusLeaderLogin}}</td>
+                <td title="'Export details'">
+                    <a href="#" ng-click="ctrl.exportStaffCSV($event,s.campus,s.educationOrganizationId)">Staff list</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+            
+        </div>
+    </div>
+</div>
+

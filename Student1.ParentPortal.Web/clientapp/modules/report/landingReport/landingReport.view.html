@@ -1,0 +1,133 @@
+﻿<main role="main" class="container" ng-if="ctrl.role == 'Admin'">
+    <h1>{{'view.reportlogin.title'  | translate}}, <span>{{'view.reportlogin.subTitleAdmin' | translate}}</span></h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" onclick="return false;" role="tab" aria-controls="nav-login" aria-selected="true">{{'Logins' | translate}}</a>
+                            <a class="nav-item nav-link" id="nav-message-tab" data-toggle="tab" href="#nav-message" onclick="return false;" role="tab" aria-controls="nav-message" aria-selected="false">{{'Messages' | translate}}</a>
+                        </div>
+                    </nav>
+
+                    <div class="tab-content" id="nav-tabContent">
+                        <!--Login tab-->
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <!--Child tabs start-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-12">
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-item nav-link active" id="nav-staff-tab" data-toggle="tab" href="#nav-staff" onclick="return false;" role="tab" aria-controls="nav-staff" aria-selected="true">{{'Staff' | translate}}</a>
+                                                    <a class="nav-item nav-link" id="nav-parent-tab" data-toggle="tab" href="#nav-parent" onclick="return false;" role="tab" aria-controls="nav-parent" aria-selected="false">{{'Family Members' | translate}}</a>
+                                                </div>
+                                            </nav>
+
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <!--Staff tab-->
+                                                <div class="tab-pane fade show active" id="nav-staff" role="tabpanel" aria-labelledby="nav-staff-tab">
+                                                    <report-staff summary="ctrl.modelStaffLoginSummary" model="ctrl.modelStaff" tooltips="ctrl.tooltips"></report-staff>
+                                                </div>
+                                                <!--Staff tab end-->
+                                                <!--Parent tab-->
+                                                <div class="tab-pane fade" id="nav-parent" role="tabpanel" aria-labelledby="nav-parent-tab">
+                                                    <report-parent model="ctrl.modelParent" tooltips="ctrl.tooltips"></report-parent>
+                                                </div>
+                                                <!--Parent tab end-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Child tabs end-->
+
+
+
+                        </div>
+                        <!--Login tab end-->
+                        <!--Message tab-->
+                        <div class="tab-pane fade" id="nav-message" role="tabpanel" aria-labelledby="nav-message-tab">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab-m" role="tablist">
+                                                <a class="nav-item nav-link active" id="nav-staff-tab-m" data-toggle="tab" href="#nav-staff-m" onclick="return false;" role="tab" aria-controls="nav-staff-m" aria-selected="true">{{'Staff' | translate}}</a>
+                                                <a class="nav-item nav-link" id="nav-parent-tab-m" data-toggle="tab" href="#nav-parent-m" onclick="return false;" role="tab" aria-controls="nav-parent-m" aria-selected="false">{{'Family Members' | translate}}</a>
+                                            </div>
+                                        </nav>
+
+                                        <div class="tab-content" id="nav-tabContent-m">
+                                            <!--Staff tab-->
+                                            <div class="tab-pane fade show active" id="nav-staff-m" role="tabpanel" aria-labelledby="nav-staff-tab-m">
+                                                <report-message-staff model="ctrl.modelStaffMessages" tooltips="ctrl.tooltips"></report-message-staff>
+                                            </div>
+                                            <!--Staff tab end-->
+                                            <!--Parent tab-->
+                                            <div class="tab-pane fade" id="nav-parent-m" role="tabpanel" aria-labelledby="nav-parent-tab-m">
+                                                <report-message-parent model="ctrl.modelParentMessages" tooltips="ctrl.tooltips"></report-message-parent>
+                                            </div>
+                                            <!--Parent tab end-->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Message tab end-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+<main role="main" class="container" ng-if="ctrl.role == 'Staff' || ctrl.role == 'CampusLeader'">
+    <h1>{{'view.reportlogin.title'  | translate}}, <span>{{'view.reportlogin.subTitle' | translate}}</span></h1>
+</main>
+
+<style>
+    /*table */
+    table {
+        border-collapse: collapse;
+    }
+
+        table th, table td {
+            padding: 3px;
+        }
+
+            table th:hover {
+                cursor: pointer;
+            }
+
+    .arrow-down:after, .arrow-up:after {
+        content: ' ';
+        position: relative;
+        left: 2px;
+        border: 8px solid transparent;
+    }
+
+    .arrow-down:after {
+        top: 10px;
+        border-top-color: black;
+    }
+
+    .arrow-up:after {
+        bottom: 15px;
+        border-bottom-color: black;
+    }
+
+    .arrow-down, .arrow-up {
+        padding-right: 10px;
+    }
+</style>
+

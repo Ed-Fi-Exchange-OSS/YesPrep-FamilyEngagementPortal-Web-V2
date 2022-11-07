@@ -1,0 +1,28 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <!--<h3 class="mb-3">{{ctrl.campusName}}</h3>-->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="cursor-pointer">
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("staffName")'>Staff Name</th>
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("staffRole")'>Staff Role</th>
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("lastWeekLogs")'>Last Week</th>
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("lastMonthLogs")'>Last Month</th>
+                        <th class="ng-binding" ng-click='ctrl.sortColumn("ytd")'>YTD <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.ytd}}"></i></th>
+                        <!-- <th class="ng-binding">Export details</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="s in ctrl.model|orderBy:ctrl.column:ctrl.reverse">
+                        <td class="ng-binding">{{s.staffName}}</td>
+                        <td>{{s.staffRole}}</td>
+                        <td>{{s.lastWeekLogs}}</td>
+                        <td>{{s.lastMonthLogs}}</td>
+                        <td>{{s.ytd}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

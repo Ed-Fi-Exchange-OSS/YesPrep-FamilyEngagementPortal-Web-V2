@@ -1,0 +1,80 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="ng-binding">Campus</th>
+                        <th class="ng-binding">Eligible Staff <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.eligibleStaff}}"></i> </th>
+                        <th class="ng-binding">Eligible Staff Login</th>
+                        <th class="ng-binding">Teachers <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.teachers}}"></i></th>
+                        <th class="ng-binding">Teachers Login</th>
+                        <th class="ng-binding">Campus Leaders <i class="icon ion-ios-information-circle" title="{{ctrl.tooltips.campusLeaders}}"></i></th>
+                        <th class="ng-binding">Campus Leaders Login</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="s in ctrl.model">
+                        <td><a href="#" ng-click="ctrl.changeCampus($event, $index)">{{s.campusLogReports.campus}}</a></td>
+                        <td>{{s.campusLogReports.eligibleStaff}}</td>
+                        <td>{{s.campusLogReports.eligibleStaffLogin}}</td>
+                        <td>{{s.campusLogReports.teacher}}</td>
+                        <td>{{s.campusLogReports.teacherLogin}}</td>
+                        <td>{{s.campusLogReports.campusLeader}}</td>
+                        <td>{{s.campusLogReports.campusLeaderLogin}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div class="row justify-content-end pr-3">
+    <div class="card">
+        <button class="btn btn-primary" ng-click="ctrl.exportCSV()">Export Staff List CSV</button>
+    </div>
+
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <!--<div class="row" ng-if="ctrl.model.length > 1">
+            <div class="col-12 col-lg-4 float-md-right">
+                <div class="form-group">
+                    <label for="nickname"> {{'select school.' | translate}} </label>
+                    <select class="form-control" name="schoolselect" id="schoolselect"
+                            ng-model="ctrl.seletedschool"
+                            ng-options="item for item in ctrl.schools"
+                            ng-change="ctrl.OnSchoolChange()">
+                    </select>
+                </div>
+            </div>
+        </div>-->
+        <div class="table-responsive">
+            <h3 class="mb-3">{{ctrl.campusName}}</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="cursor-pointer">
+                        <th class="ng-binding" ng-class='ctrl.sortClass("staffName")'  ng-click='ctrl.sortColumn("staffName")'>Staff Name </th>
+                        <th class="ng-binding" ng-class='ctrl.sortClass("staffRole")'  ng-click='ctrl.sortColumn("staffRole")'>Staff Role </th>
+                        <th class="ng-binding" ng-class='ctrl.sortClass("staffClassification")'  ng-click='ctrl.sortColumn("staffClassification")'>Staff Classificacion </th>
+                        <th class="ng-binding" ng-class='ctrl.sortClass("lastWeekLogs")'  ng-click='ctrl.sortColumn("lastWeekLogs")'>Last Week </th>
+                        <th class="ng-binding" ng-class='ctrl.sortClass("lastMonthLogs")'  ng-click='ctrl.sortColumn("lastMonthLogs")'>Last Month </th>
+                        <th class="ng-binding" ng-class='ctrl.sortClass("ytd")'  ng-click='ctrl.sortColumn("ytd")'>YTD </th>
+                        <!-- <th class="ng-binding">Export details</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="s in ctrl.staff|orderBy:ctrl.column:ctrl.reverse">
+                        <td class="ng-binding">{{s.staffName}}</td>
+                        <td>{{s.staffRole}}</td>
+                        <td>{{s.staffClassification}}</td>
+                        <td>{{s.lastWeekLogs}}</td>
+                        <td>{{s.lastMonthLogs}}</td>
+                        <td>{{s.ytd}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

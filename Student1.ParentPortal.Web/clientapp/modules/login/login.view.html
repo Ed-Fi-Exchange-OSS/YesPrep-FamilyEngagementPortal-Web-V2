@@ -1,0 +1,74 @@
+﻿<main role="main" class="container h-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-xl-6">
+            <div ng-if="ctrl.isApplicationOffline" class="alert alert-danger align-middle"><i class="ion-md-alert f-s-20"></i> {{'view.login.app_online_status' | translate}}</div>
+            <!--   <div class="alert alert-danger"><i class="ion-md-information-circle f-s-20"></i> {{'view.login.app_pilot' | translate}}</div>-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-right">
+                        <language-chooser></language-chooser>
+                    </div>
+                    <div class="text-center">
+                        <img src="clientapp/assets/img/logo.png" alt="District Logo" />
+                    </div>
+                    <h1 class=" text-center m-t-25">{{'view.login.app_name' | translate}}</h1>
+                    <h2 ng-if="!ctrl.isApplicationOffline" class="text-center m-t-10 f-s-16">
+                        {{'view.login.log_into_account' | translate}}
+                    </h2>
+                    <div ng-if="!ctrl.isApplicationOffline" class="text-center m-t-20">
+                        <!--<h5 class="m-b-30">{{'view.login.or_login_with' | translate}}</h5>-->
+                        <a href="#" ng-click="ctrl.loginSSO()" class="btn btn-primary">Login</a>
+                        <span class="f-s-12">
+                            {{'App Browser' | translate}}
+                            <i class="icon ion-logo-chrome"></i>
+                        </span>
+                        <p class="m-t-30">
+                            <a href="#" ng-click="ctrl.logOutSSO()">{{'view.login.sign_out' | translate}}</a>
+                        </p>
+                        <p class="m-t-30" ng-if="ctrl.model.userInfo.isAuthenticated">
+                            {{'view.login.currentlyt_loged_in_as' | translate}}: {{ctrl.model.userInfo.userName}}
+                            <br />
+                            <a href="#" ng-click="ctrl.logOutSSO()" tooltip-placement="bottom" uib-tooltip="Expires ({{ctrl.model.tokenExpires | date:'medium'}})">{{'view.login.sign_out' | translate}}</a>
+                        </p>
+                    </div>
+
+                    <!--
+            <div ng-show="ctrl.model.showAppButtons" class="text-center m-t-20">
+                <span class="f-s-12">
+                    {{'You can donwload our app for a best user experience:' | translate}}
+                </span>
+                <div>
+                    <a href='https://play.google.com/store/apps/details?id=org.student1.familyengagementapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="width:285px; height:auto"/></a>
+                    <a href="https://apps.apple.com/us/app/student1-family-engagement/id1516015641?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1591660800&h=eeb7835f02e5b85c30097b5518a26d1e" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+                </div>
+            </div>
+            -->
+
+                </div>
+
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="text-left">
+                        <a ui-sref="app.privacypolicy"><i class="icon ion-md-lock"></i> {{'Privacy Policy' | translate}}</a>
+                    </span>
+                    <div class="dropdown login-feedback-button">
+                        <a class="btn btn-fill-help"
+                           id="dropdown"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false"
+                           tooltip-placement="bottom"
+                           uib-tooltip="{{'HelpTooltip' | translate}}">
+                            <i class="ion ion-md-help"></i>
+                        </a>
+                        <div aria-labelledby="dropdown02" class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button" ng-click="ctrl.showFeedbackModal()"> {{'Feedback' | translate}}</button>
+                            <button class="dropdown-item" type="button" ng-click="ctrl.goToExternalUrl()"> {{'Help' | translate}}</button>
+                        </div>
+                    </div>
+                    <div class="float-right">{{ctrl.model.version}}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
